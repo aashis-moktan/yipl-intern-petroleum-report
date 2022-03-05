@@ -25,7 +25,7 @@ router.get('/total-sale-by-petroleum-product',(request, response)=>{
     db.close();
 });
 
-// GET HIGHEST AND LOWEST SALES BY SALES
+// GET HIGHEST AND LOWEST SALES BY COUNTRIES
 router.get('/highest-lowest-total-sales',(request, response)=>{
     const db = new sqlite3.Database(DBSOURCE, (error)=>{
         if(error)
@@ -67,7 +67,7 @@ router.get('/average-sale',(request, response)=>{
                     WHEN 2014 then '2011-2014'
                     ELSE year 
                 END year,
-                AVG(total) as Avg 
+                AVG(total) as avg 
                 FROM (SELECT petroleum_product, 
                     SUM(sale) as total, year FROM Petroleum GROUP BY petroleum_product, year HAVING sale != 0) GROUP BY petroleum_product, year BETWEEN 2007 AND 2010, year BETWEEN 2011 AND 2014 ORDER BY petroleum_product, year`,[],(error,rows)=>{
                 if(error){

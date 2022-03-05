@@ -1,16 +1,19 @@
 {
-  "name": "younginnovations.pvt.ltd",
+  "name": "yipl-intern-petroleum-report",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node report.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
+    "pug": "^3.0.2",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {

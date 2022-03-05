@@ -1,0 +1,42 @@
+doctype html
+html 
+    head 
+        title Petroleum product report
+        include bootstrap.pug
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
+        link(rel="stylesheet" href="css/index.css")
+        script(src="js/index.js")
+    body 
+        div.container.p-5.box.mt-4
+            nav 
+                div.nav.nav-tabs#nav-tab(role="tablist")
+                    a.navbar-brand Petroleum report
+                    a.nav-item.nav-link.ml-auto.active(id="total-sales-btn" data-toggle="tab" href="#total-sales" role="tab" title="Get total sales report of each petroleum product") Sales report
+                    a.nav-item.nav-link(id="highest-lowest-btn" data-toggle="tab" href="#highest-lowest-sales" role="tab" title="Get highest and lowest sales of top 3 countries") Highest & Lowest Sales
+                    a.nav-item.nav-link(id="average-sales-btn" data-toggle="tab" href="#average-sales" role="tab" title="Get average sales of each petroleum product for the interval of 4 years") Average Sale
+                    a.nav-item.nav-link(id="nav-contact-tab" data-toggle="tab" href="#read-api" role="tab" title="Learn how to call our API") About API
+            div.tab-content
+                div.tab-pane.active.p-4(id="total-sales" role="tabpanel" aria-labelledby="nav-home-tab") 
+                    span.bg-light.p-2.font-weight-bold.d-block.mb-1.fit-content Total sales of each petroleum
+                    div.sales-report-box
+                div.tab-pane.fade.p-4(id="highest-lowest-sales" role="tabpanel" aria-labelledby="nav-home-tab")
+                    span.bg-light.p-2.font-weight-bold.d-block.mb-1.fit-content Top 3 Countries with highest sales
+                    div.highest-report-box.mb-4
+                    span.bg-light.p-2.font-weight-bold.d-block.mb-1.fit-content Top 3 Countries with lowest sales
+                    div.lowest-report-box
+                div.tab-pane.fade.p-4(id="average-sales" role="tabpanel" aria-labelledby="nav-home-tab")
+                    span.bg-light.p-2.font-weight-bold.d-block.mb-1.fit-content Average sale of each petroleum product for 4 years of interval
+                    div.average-report-box
+                div.tab-pane.fade.p-4(id="read-api" role="tabpanel")
+                    div.p-4.bg-light
+                        p .READ ME 
+                        div.mb-4 
+                            p.m-0.p-0 ### API endpoint for getting sales of each petroleum product ###
+                            a(href="http://localhost:8080/api/report/total-sale-by-petroleum-product" target="_blank") http://localhost:8080/api/report/total-sale-by-petroleum-product
+                        div.mb-4 
+                            p.m-0.p-0 ### API endpoint for getting top 3 countries with highest and lowest sales ###
+                            a(href="http://localhost:8080/api/report/highest-lowest-total-sales" target="_blank") http://localhost:8080/api/report/highest-lowest-total-sales
+                        div.mb-4 
+                            p.m-0.p-0 ### API endpoint for getting average sales for each petroleum product between the interval of 4 years ###
+                            a(href="http://localhost:8080/api/report/average-sale" target="_blank") http://localhost:8080/api/report/average-sale
+        
